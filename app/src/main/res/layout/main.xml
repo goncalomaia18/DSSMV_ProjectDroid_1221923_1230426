@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#FFEBEE"
+              tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D81B60"
+            android:title="Meu App"
+            android:titleTextColor="#FFFFFF"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="241dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+            <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FF4081"
+                    android:text="Verdade ou Consequência"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:layout_margin="8dp"/>
+
+            <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#F50057"
+                    android:text="Coming Soon"
+                    android:textColor="#FFFFFF"
+                    android:padding="16dp"
+                    android:textSize="18sp"
+                    android:layout_margin="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

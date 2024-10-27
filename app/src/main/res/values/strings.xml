@@ -37,4 +37,15 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus vestibulum. Fusce
         dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+
+        <string name="spider">Seu App</string>
+        <string name="spinner_title">Opções</string>
+        <string-array name="menu_options">
+            <item>Definições</item>
+            <item>Sobre</item>
+        </string-array>
+
+
 </resources>
+
