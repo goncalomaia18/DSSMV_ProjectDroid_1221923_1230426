@@ -12,6 +12,8 @@ import com.example.projeto.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
+    private TextView tvPergunta;
+
     private FragmentFirstBinding binding;
 
     @Override
