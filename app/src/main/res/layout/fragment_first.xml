@@ -6,18 +6,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".FirstFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:padding="16dp">
+
         <Button
                 android:id="@+id/button_first"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/next"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:layout_gravity="center" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+                android:id="@+id/tvPergunta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aguardando pergunta..."
+                android:textSize="18sp"
+                android:layout_marginTop="16dp" />
+
+        <!-- Outros elementos, como botões ou títulos, podem ser adicionados aqui -->
+
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>
+
+
