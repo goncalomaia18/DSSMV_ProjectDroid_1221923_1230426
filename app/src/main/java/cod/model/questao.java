@@ -1,6 +1,8 @@
 package cod.model;
 
-public class questao {
+public class
+
+questao {
 
         private String id;
         private String type;
@@ -11,6 +13,10 @@ public class questao {
         public questao(String id, String type, String rating, String question) {
             this.id = id;
             this.type = type;
+
+
+
+
             this.rating = rating;
             this.question = question;
         }
