@@ -1,10 +1,10 @@
-package com.example.projeto; // Verifique se o pacote está correto
+package com.example.projeto;
 
 public class Pergunta {
-    private String _id; // Campo para o ID
-    private String perguntas; // Campo para o texto da pergunta
+    private String _id;
+    private String perguntas;
 
-    // Construtor padrão
+
     public Pergunta() {}
 
     // Getter para o ID
@@ -12,12 +12,11 @@ public class Pergunta {
         return _id;
     }
 
-    // Getter para o texto da pergunta
     public String getPergunta() {
         return perguntas;
     }
 
-    // Setter para o texto da pergunta
+
     public void setPergunta(String pergunta) {
         this.perguntas = pergunta;
     }
