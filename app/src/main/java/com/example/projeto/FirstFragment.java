@@ -51,16 +51,21 @@ public class FirstFragment extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     List<Pergunta> perguntas = response.body();
                     StringBuilder perguntasText = new StringBuilder();
+
                     for (Pergunta pergunta : perguntas) {
-                        perguntasText.append("Pergunta: ").append(pergunta.getPergunta()).append("\n");
+                        String perguntaTexto = pergunta.getPergunta();
+                        perguntasText.append(perguntaTexto).append("\n");
                     }
+
                     binding.textViewPerguntas.setText(perguntasText.toString());
+                } else {
+                    binding.textViewPerguntas.setText("Erro ao obter perguntas: " + response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<List<Pergunta>> call, Throwable t) {
-
+                binding.textViewPerguntas.setText("Falha na requisição: " + t.getMessage());
             }
         });
     }
