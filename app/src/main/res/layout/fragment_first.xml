@@ -21,12 +21,11 @@
                 android:layout_gravity="center" />
 
         <TextView
-                android:id="@+id/tvPergunta"
-                android:layout_width="match_parent"
+                android:id="@+id/textViewPerguntas"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Aguardando pergunta..."
-                android:textSize="18sp"
-                android:layout_marginTop="16dp" />
+                android:text="Perguntas aqui"
+                android:padding="16dp" />
 
         <!-- Outros elementos, como botões ou títulos, podem ser adicionados aqui -->
 
