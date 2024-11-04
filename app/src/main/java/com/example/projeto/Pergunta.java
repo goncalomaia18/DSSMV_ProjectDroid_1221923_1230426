@@ -1,22 +1,24 @@
-package com.example.projeto;
+package com.example.projeto; // Verifique se o pacote está correto
 
 public class Pergunta {
-    private String _id; // se você precisa do ID
-    private String pergunta; // certifique-se de que este campo corresponda ao JSON
+    private String _id; // Campo para o ID
+    private String pergunta; // Campo para o texto da pergunta
 
+    // Construtor padrão
+    public Pergunta() {}
+
+    // Getter para o ID
+    public String getId() {
+        return _id;
+    }
+
+    // Getter para o texto da pergunta
     public String getPergunta() {
         return pergunta;
     }
 
+    // Setter para o texto da pergunta
     public void setPergunta(String pergunta) {
         this.pergunta = pergunta;
     }
-
-    // Adicione um getter para _id se necessário
-    public String getId() {
-        return _id;
-    }
 }
-
-
-

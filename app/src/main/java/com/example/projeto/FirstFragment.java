@@ -1,7 +1,6 @@
 package com.example.projeto;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,18 +26,14 @@ public class FirstFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         binding = FragmentFirstBinding.inflate(inflater, container, false);
-        return binding.getRoot(); // Retorna a raiz do layout
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
         fetchPerguntas();
-
 
         binding.buttonFirst.setOnClickListener(v ->
                 NavHostFragment.findNavController(FirstFragment.this)
@@ -53,23 +48,19 @@ public class FirstFragment extends Fragment {
         call.enqueue(new Callback<List<Pergunta>>() {
             @Override
             public void onResponse(Call<List<Pergunta>> call, Response<List<Pergunta>> response) {
-                Log.d("API", "Código da resposta: " + response.code());
                 if (response.isSuccessful() && response.body() != null) {
                     List<Pergunta> perguntas = response.body();
                     StringBuilder perguntasText = new StringBuilder();
                     for (Pergunta pergunta : perguntas) {
                         perguntasText.append("Pergunta: ").append(pergunta.getPergunta()).append("\n");
                     }
-
                     binding.textViewPerguntas.setText(perguntasText.toString());
-                } else {
-                    Log.e("API", "Erro: " + response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<List<Pergunta>> call, Throwable t) {
-                Log.e("API", "Erro de requisição: " + t.getMessage());
+
             }
         });
     }
@@ -77,7 +68,6 @@ public class FirstFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null; // Limpa a referência para evitar vazamentos de memória
+        binding = null;
     }
 }
-
