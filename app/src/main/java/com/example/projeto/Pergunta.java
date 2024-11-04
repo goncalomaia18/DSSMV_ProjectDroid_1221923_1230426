@@ -1,22 +1,23 @@
 package com.example.projeto;
 
 public class Pergunta {
-    private String _id; // se você precisa do ID
-    private String pergunta; // certifique-se de que este campo corresponda ao JSON
+    private String _id;
+    private String perguntas;
 
-    public String getPergunta() {
-        return pergunta;
-    }
 
-    public void setPergunta(String pergunta) {
-        this.pergunta = pergunta;
-    }
+    public Pergunta() {}
 
-    // Adicione um getter para _id se necessário
+    // Getter para o ID
     public String getId() {
         return _id;
     }
+
+    public String getPergunta() {
+        return perguntas;
+    }
+
+
+    public void setPergunta(String pergunta) {
+        this.perguntas = pergunta;
+    }
 }
-
-
-
