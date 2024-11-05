@@ -1,4 +1,4 @@
-package com.example.projeto;
+package cod.model;
 
 public class Pergunta {
     private String _id;

@@ -1,4 +1,6 @@
 package com.example.projeto;
+import cod.model.ClassConsequencia;
+import cod.model.Pergunta;
 
 
 import retrofit2.Call;
@@ -13,4 +15,7 @@ public interface ApiService {
     })
     @GET("perguntas")
     Call<List<Pergunta>> getPerguntas();
+
+    @GET("consequencia")
+    Call<List<ClassConsequencia>> getConsequencia();
 }
