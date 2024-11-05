@@ -1,5 +1,7 @@
 package com.example.projeto;
+import cod.model.Pergunta;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,26 +9,28 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-import com.example.projeto.databinding.FragmentFirstBinding;
+import cod.model.Pergunta;
+import com.example.projeto.databinding.VerdadeBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 import java.util.List;
+import java.util.Random;
 
-public class FirstFragment extends Fragment {
 
-    private FragmentFirstBinding binding;
+public class Verdade extends Fragment {
+
+    private VerdadeBinding binding;
 
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = FragmentFirstBinding.inflate(inflater, container, false);
+        binding = VerdadeBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -35,9 +39,13 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         fetchPerguntas();
 
-        binding.buttonFirst.setOnClickListener(v ->
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
+        binding.buttonConsequencia.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ConsequenciaActivity.class);
+            startActivity(intent);
+        });
+
+        binding.buttonRespondeu.setOnClickListener(v ->
+                fetchPerguntas() // Chama novamente para carregar uma nova pergunta
         );
     }
 
@@ -50,14 +58,15 @@ public class FirstFragment extends Fragment {
             public void onResponse(Call<List<Pergunta>> call, Response<List<Pergunta>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<Pergunta> perguntas = response.body();
-                    StringBuilder perguntasText = new StringBuilder();
 
-                    for (Pergunta pergunta : perguntas) {
-                        String perguntaTexto = pergunta.getPergunta();
-                        perguntasText.append(perguntaTexto).append("\n");
+                    if (!perguntas.isEmpty()) {
+                        // Seleciona uma pergunta aleatória
+                        int indexAleatorio = new Random().nextInt(perguntas.size());
+                        String perguntaAleatoria = perguntas.get(indexAleatorio).getPergunta();
+                        binding.textViewPerguntas.setText(perguntaAleatoria);
+                    } else {
+                        binding.textViewPerguntas.setText("Nenhuma pergunta disponível.");
                     }
-
-                    binding.textViewPerguntas.setText(perguntasText.toString());
                 } else {
                     binding.textViewPerguntas.setText("Erro ao obter perguntas: " + response.message());
                 }
