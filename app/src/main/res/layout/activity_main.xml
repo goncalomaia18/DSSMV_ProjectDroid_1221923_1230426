@@ -33,6 +33,15 @@
             android:padding="16dp"
             android:gravity="center">
 
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/dadossemfundo"
+                android:layout_marginTop="16dp"
+                android:contentDescription="Imagem de exemplo"
+                android:scaleType="centerCrop"/>
+
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

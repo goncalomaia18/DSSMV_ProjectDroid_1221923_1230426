@@ -5,10 +5,7 @@ import cod.model.Pergunta;
 import cod.model.PerguntaPersonalizado;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.Headers;
-import retrofit2.http.POST;
+import retrofit2.http.*;
 
 import java.util.List;
 
@@ -51,7 +48,18 @@ public interface ApiService {
     })
     @GET("consequenciaspersonalizado")
     Call<List<ClassConsequenciaPersonalizado>> getConsequenciaPersonalizado();
+
+    @Headers({
+            "Content-Type: application/json",
+            "x-apikey: f9ac62cfdf5b449cd16ee1a1052d328b8e6b5"
+    })
+    @POST("consequenciaspersonalizado")
+    Call<Void>adicionarConsequenciaPersonalizado(@Body ClassConsequenciaPersonalizado novaConsequencia);
+
+
+
 }
+
 
 
 
