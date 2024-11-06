@@ -1,5 +1,5 @@
 package com.example.projeto;
-import android.widget.Button;
+
 import cod.model.Pergunta;
 
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import cod.model.Pergunta;
+
 import com.example.projeto.databinding.VerdadeBinding;
 
 import retrofit2.Call;
