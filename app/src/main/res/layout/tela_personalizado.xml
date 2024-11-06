@@ -33,7 +33,7 @@
                 android:layout_weight="1"
                 android:text="Adicionar Pergunta"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#4CAF50"
+                android:backgroundTint="#D81B60"
                 android:layout_marginEnd="8dp"
                 android:padding="12dp"
                 android:fontFamily="sans-serif-medium"/>
@@ -47,7 +47,7 @@
                 android:layout_weight="1"
                 android:text="Remover Pergunta"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#F44336"
+                android:backgroundTint="#FF4081"
                 android:layout_marginStart="8dp"
                 android:padding="12dp"
                 android:fontFamily="sans-serif-medium"/>
@@ -83,7 +83,7 @@
                 android:layout_weight="1"
                 android:text="Adicionar Pergunta"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#4CAF50"
+                android:backgroundTint="#D81B60"
                 android:layout_marginEnd="8dp"
                 android:padding="12dp"
                 android:fontFamily="sans-serif-medium"/>
@@ -96,7 +96,7 @@
                 android:layout_weight="1"
                 android:text="Remover Pergunta"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#F44336"
+                android:backgroundTint="#FF4081"
                 android:layout_marginStart="8dp"
                 android:padding="12dp"
                 android:fontFamily="sans-serif-medium"/>
@@ -114,7 +114,7 @@
             android:layout_height="wrap_content"
             android:text="Jogar"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#FF5722"
+            android:backgroundTint="#D00649"
             android:padding="16dp"
             android:fontFamily="sans-serif-medium"/>
 </LinearLayout>
