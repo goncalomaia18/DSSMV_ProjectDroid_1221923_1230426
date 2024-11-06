@@ -1,4 +1,5 @@
 package com.example.projeto;
+import android.content.Intent;
 import cod.model.ClassConsequencia;
 
 import android.os.Bundle;
@@ -34,6 +35,22 @@ public class ConsequenciaFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         fetchConsequencias();
+
+        binding.buttonRespondeuConsequencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cria o Intent usando o contexto da Activity associada
+                Intent intent = new Intent(requireActivity(), VerdadeActivity.class);
+                startActivity(intent);
+
+                // Finaliza a Activity anterior, se desejar fechar a MainActivity
+                requireActivity().finish();
+            }
+        });
+
+        binding.buttonnovaconsequencia.setOnClickListener(v ->
+                fetchConsequencias()
+        );
     }
 
     private void fetchConsequencias() {
@@ -51,10 +68,10 @@ public class ConsequenciaFragment extends Fragment {
                         String consequenciaAleatoria = consequencias.get(indexAleatorio).getConsequencia();
                         binding.textViewConsequencias.setText(consequenciaAleatoria);
                     } else {
-                        binding.textViewConsequencias.setText("Nenhuma pergunta disponível.");
+                        binding.textViewConsequencias.setText("Nenhuma consequência disponível.");
                     }
                 } else {
-                    binding.textViewConsequencias.setText("Erro ao obter perguntas: " + response.message());
+                    binding.textViewConsequencias.setText("Erro ao obter consequências: " + response.message());
                 }
             }
 

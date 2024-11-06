@@ -53,7 +53,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#F50057"
+                    android:background="#F4075C"
                     android:text="Verdade ou Consequência Personalizado"
                     android:textColor="#FFFFFF"
                     android:padding="16dp"
@@ -62,9 +62,4 @@
         </LinearLayout>
     </LinearLayout>
 
-    <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
 </LinearLayout>
