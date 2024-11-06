@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="#FFFFFF">
+
+    <!-- Título "Verdade" e botões para adicionar e remover perguntas -->
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verdade"
+            android:textSize="24sp"
+            android:textColor="#D81B60"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <!-- Botão Adicionar Pergunta para "Verdade" -->
+        <Button
+                android:id="@+id/buttonAdicionarPergunta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Adicionar Pergunta"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp"
+                android:fontFamily="sans-serif-medium"/>
+
+
+        <!-- Botão Remover Pergunta para "Verdade" -->
+        <Button
+                android:id="@+id/buttonRemoverVerdade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Remover Pergunta"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#F44336"
+                android:layout_marginStart="8dp"
+                android:padding="12dp"
+                android:fontFamily="sans-serif-medium"/>
+    </LinearLayout>
+
+    <!-- Espaço entre seções -->
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
+
+    <!-- Título "Consequência" e botões para adicionar e remover perguntas -->
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consequência"
+            android:textSize="24sp"
+            android:textColor="#D81B60"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <!-- Botão Adicionar Pergunta para "Consequência" -->
+        <Button
+                android:id="@+id/buttonAdicionarConsequencia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Adicionar Pergunta"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginEnd="8dp"
+                android:padding="12dp"
+                android:fontFamily="sans-serif-medium"/>
+
+        <!-- Botão Remover Pergunta para "Consequência" -->
+        <Button
+                android:id="@+id/buttonRemoverConsequencia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Remover Pergunta"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#F44336"
+                android:layout_marginStart="8dp"
+                android:padding="12dp"
+                android:fontFamily="sans-serif-medium"/>
+    </LinearLayout>
+
+    <!-- Espaço antes do botão "Jogar" -->
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+
+    <!-- Botão para iniciar o jogo -->
+    <Button
+            android:id="@+id/buttonJogar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jogar"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF5722"
+            android:padding="16dp"
+            android:fontFamily="sans-serif-medium"/>
+</LinearLayout>

@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Certifique-se de que este layout é o correto
+        setContentView(R.layout.activity_main);
 
         Button buttonVerdadeOuConsequencia = findViewById(R.id.verdadeconsequencia);
         buttonVerdadeOuConsequencia.setOnClickListener(new View.OnClickListener() {
@@ -20,6 +20,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, VerdadeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button buttonVerdadeOuConsequenciaPersonalizado = findViewById(R.id.verdadeconsequenciapersonalizado);
+        buttonVerdadeOuConsequenciaPersonalizado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, TelaPersonalizadoActivity.class);
                 startActivity(intent);
             }
         });
