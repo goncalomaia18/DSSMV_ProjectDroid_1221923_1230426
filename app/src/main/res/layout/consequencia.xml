@@ -37,10 +37,10 @@
 
     <!-- Botão Respondeu -->
     <Button
-            android:id="@+id/buttonRespondeuConsequencia"
+            android:id="@+id/buttonnovaconsequencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Respondeu"
+            android:text="Consequência"
             android:textColor="#FFFFFF"
             android:backgroundTint="#D81B60"
             android:padding="16dp"
@@ -49,10 +49,10 @@
 
     <!-- Botão Consequência -->
     <Button
-            android:id="@+id/button123"
+            android:id="@+id/buttonRespondeuConsequencia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Consequência"
+            android:text="Respondeu"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FF4081"
             android:padding="16dp"

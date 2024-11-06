@@ -1,4 +1,5 @@
 package com.example.projeto;
+import android.widget.Button;
 import cod.model.Pergunta;
 
 import android.content.Intent;
@@ -39,9 +40,16 @@ public class Verdade extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         fetchPerguntas();
 
-        binding.buttonConsequencia.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), ConsequenciaActivity.class);
-            startActivity(intent);
+        binding.buttonConsequencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cria o Intent usando o contexto da Activity associada
+                Intent intent = new Intent(requireActivity(), ConsequenciaActivity.class);
+                startActivity(intent);
+
+                // Finaliza a Activity anterior, se desejar fechar a MainActivity
+                requireActivity().finish();
+            }
         });
 
         binding.buttonRespondeu.setOnClickListener(v ->

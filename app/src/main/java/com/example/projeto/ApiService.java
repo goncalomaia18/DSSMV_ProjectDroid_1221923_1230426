@@ -16,6 +16,14 @@ public interface ApiService {
     @GET("perguntas")
     Call<List<Pergunta>> getPerguntas();
 
-    @GET("consequencia")
+
+    @Headers({
+            "Content-Type: application/json",
+            "x-apikey: f9ac62cfdf5b449cd16ee1a1052d328b8e6b5"
+    })
+    @GET("consequencias")
     Call<List<ClassConsequencia>> getConsequencia();
 }
+
+
+
