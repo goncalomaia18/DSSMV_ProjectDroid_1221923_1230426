@@ -2,10 +2,12 @@ package com.example.projeto;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,10 +36,33 @@ public class TelaPersonalizado extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Configurando o botão "Adicionar Pergunta"
+        binding.buttonJogar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cria o Intent usando o contexto da Activity associada
+                Intent intent = new Intent(requireActivity(), VerdadePersonalizadoActivity.class);
+                startActivity(intent);
+
+                // Finaliza a Activity anterior, se desejar fechar a MainActivity
+                requireActivity().finish();
+            }
+        });
+
+        binding.buttonRemoverVerdade.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cria o Intent usando o contexto da Activity associada
+                Intent intent = new Intent(requireActivity(), RemoverVerdadesActivity.class);
+                startActivity(intent);
+
+                // Finaliza a Activity anterior, se desejar fechar a MainActivity
+                requireActivity().finish();
+            }
+        });
+
         binding.buttonAdicionarPergunta.setOnClickListener(v -> showDialogAdicionarPergunta());
 
-        // Configurando o botão "Adicionar Consequência"
+
         binding.buttonAdicionarConsequencia.setOnClickListener(v -> showDialogAdicionarConsequencia());
     }
 

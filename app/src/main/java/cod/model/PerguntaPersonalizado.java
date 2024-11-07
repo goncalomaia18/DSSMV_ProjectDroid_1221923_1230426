@@ -20,4 +20,8 @@ public class PerguntaPersonalizado {
     public void setPerguntaPersonalizado(String perguntaPersonalizado) {
         this.perguntaspersonalizado = perguntaPersonalizado;
     }
+
+    public String toString() {
+        return perguntaspersonalizado; // Aqui você retorna o texto da pergunta
+    }
 }

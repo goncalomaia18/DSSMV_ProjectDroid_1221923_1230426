@@ -24,7 +24,7 @@
 
     <!-- Área para mostrar a pergunta -->
     <TextView
-            android:id="@+id/textViewPerguntas"
+            android:id="@+id/textViewPerguntasPersonalizado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pergunta aqui"
