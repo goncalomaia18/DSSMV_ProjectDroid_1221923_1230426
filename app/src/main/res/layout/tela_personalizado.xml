@@ -8,7 +8,7 @@
         android:gravity="center"
         android:background="#FFFFFF">
 
-    <!-- Título "Verdade" e botões para adicionar e remover perguntas -->
+
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +25,6 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-        <!-- Botão Adicionar Pergunta para "Verdade" -->
         <Button
                 android:id="@+id/buttonAdicionarPergunta"
                 android:layout_width="0dp"
@@ -38,8 +37,6 @@
                 android:padding="12dp"
                 android:fontFamily="sans-serif-medium"/>
 
-
-        <!-- Botão Remover Pergunta para "Verdade" -->
         <Button
                 android:id="@+id/buttonRemoverVerdade"
                 android:layout_width="0dp"
@@ -53,12 +50,11 @@
                 android:fontFamily="sans-serif-medium"/>
     </LinearLayout>
 
-    <!-- Espaço entre seções -->
+
     <View
             android:layout_width="match_parent"
             android:layout_height="24dp"/>
 
-    <!-- Título "Consequência" e botões para adicionar e remover perguntas -->
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +71,6 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-        <!-- Botão Adicionar Pergunta para "Consequência" -->
         <Button
                 android:id="@+id/buttonAdicionarConsequencia"
                 android:layout_width="0dp"
@@ -88,7 +83,6 @@
                 android:padding="12dp"
                 android:fontFamily="sans-serif-medium"/>
 
-        <!-- Botão Remover Pergunta para "Consequência" -->
         <Button
                 android:id="@+id/buttonRemoverConsequencia"
                 android:layout_width="0dp"
@@ -102,12 +96,10 @@
                 android:fontFamily="sans-serif-medium"/>
     </LinearLayout>
 
-    <!-- Espaço antes do botão "Jogar" -->
     <View
             android:layout_width="match_parent"
             android:layout_height="48dp"/>
 
-    <!-- Botão para iniciar o jogo -->
     <Button
             android:id="@+id/buttonJogar"
             android:layout_width="match_parent"

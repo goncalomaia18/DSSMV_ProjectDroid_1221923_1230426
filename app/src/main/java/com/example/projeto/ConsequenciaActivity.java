@@ -12,7 +12,7 @@ public class ConsequenciaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_consequencia);
 
         if (savedInstanceState == null) {
-            // Adiciona o FirstFragment à nova Activity
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_consequencia, new ConsequenciaFragment())
                     .commit();

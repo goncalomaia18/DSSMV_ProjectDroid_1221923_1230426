@@ -11,7 +11,7 @@ public class ConsequenciaFragmentPersonalizadoActivity extends AppCompatActivity
         setContentView(R.layout.activity_consequencia_personalizado);
 
         if (savedInstanceState == null) {
-            // Adiciona o FirstFragment à nova Activity
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_consequencia_personalizado, new ConsequenciaFragmentPersonalizado())
                     .commit();

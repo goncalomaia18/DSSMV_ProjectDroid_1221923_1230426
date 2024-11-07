@@ -39,11 +39,10 @@ public class ConsequenciaFragment extends Fragment {
         binding.buttonRespondeuConsequencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cria o Intent usando o contexto da Activity associada
+
                 Intent intent = new Intent(requireActivity(), VerdadeActivity.class);
                 startActivity(intent);
 
-                // Finaliza a Activity anterior, se desejar fechar a MainActivity
                 requireActivity().finish();
             }
         });
@@ -55,7 +54,6 @@ public class ConsequenciaFragment extends Fragment {
 
     private void fetchConsequencias() {
         ApiService apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
-
         Call<List<ClassConsequencia>> call = apiService.getConsequencia();
 
         call.enqueue(new Callback<List<ClassConsequencia>>() {

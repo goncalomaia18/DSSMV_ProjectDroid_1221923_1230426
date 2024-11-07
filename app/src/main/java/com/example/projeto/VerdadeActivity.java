@@ -12,7 +12,7 @@ public class VerdadeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verdade);
 
         if (savedInstanceState == null) {
-            // Adiciona o FirstFragment à nova Activity
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_verdade, new Verdade())
                     .commit();

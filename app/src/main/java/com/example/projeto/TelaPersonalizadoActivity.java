@@ -12,7 +12,7 @@ public class TelaPersonalizadoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tela_personalizado);
 
         if (savedInstanceState == null) {
-            // Adiciona o FirstFragment à nova Activity
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_tela_personalizado, new TelaPersonalizado())
                     .commit();

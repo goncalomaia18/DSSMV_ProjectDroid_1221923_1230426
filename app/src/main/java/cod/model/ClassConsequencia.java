@@ -7,7 +7,7 @@ public class ClassConsequencia {
 
     public ClassConsequencia() {}
 
-    // Getter para o ID
+
     public String getId() {
         return _id;
     }
@@ -17,7 +17,5 @@ public class ClassConsequencia {
     }
 
 
-    public void setConsequencia(String consequencia) {
-        this.consequencias = consequencia;
-    }
+
 }

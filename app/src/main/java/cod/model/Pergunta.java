@@ -7,7 +7,7 @@ public class Pergunta {
 
     public Pergunta() {}
 
-    // Getter para o ID
+
     public String getId() {
         return _id;
     }
@@ -17,7 +17,4 @@ public class Pergunta {
     }
 
 
-    public void setPergunta(String pergunta) {
-        this.perguntas = pergunta;
-    }
 }

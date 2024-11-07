@@ -28,9 +28,9 @@ public class VerdadePersonalizado extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        // Certifique-se de que o layout que você está inflando é 'verdade_personalizado.xml'
+
         binding = VerdadePersonalizadoBinding.inflate(inflater, container, false);
-        return binding.getRoot(); // Retorna a raiz da view (o layout)
+        return binding.getRoot();
     }
 
     @Override
@@ -41,17 +41,16 @@ public class VerdadePersonalizado extends Fragment {
         binding.buttonConsequenciaPersonalizado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cria o Intent usando o contexto da Activity associada
+
                 Intent intent = new Intent(requireActivity(), ConsequenciaFragmentPersonalizadoActivity.class);
                 startActivity(intent);
 
-                // Finaliza a Activity anterior, se desejar fechar a MainActivity
                 requireActivity().finish();
             }
         });
 
         binding.buttonRespondeuPersonalizado.setOnClickListener(v ->
-                fetchPerguntasPersonalizado() // Chama novamente para carregar uma nova pergunta
+                fetchPerguntasPersonalizado()
         );
 
 
@@ -68,7 +67,7 @@ public class VerdadePersonalizado extends Fragment {
                     List<PerguntaPersonalizado> perguntaspersonalizado = response.body();
 
                     if (!perguntaspersonalizado.isEmpty()) {
-                        // Seleciona uma pergunta aleatória
+
                         int indexAleatorio = new Random().nextInt(perguntaspersonalizado.size());
                         String perguntaAleatoria = perguntaspersonalizado.get(indexAleatorio).getPerguntaPersonalizado();
                         binding.textViewPerguntasPersonalizado.setText(perguntaAleatoria);
@@ -90,6 +89,6 @@ public class VerdadePersonalizado extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null; // Para evitar memória ocupada quando a view for destruída
+        binding = null;
     }
 }

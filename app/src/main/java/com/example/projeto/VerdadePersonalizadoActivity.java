@@ -12,7 +12,7 @@ public class VerdadePersonalizadoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verdade_personalizado);
 
         if (savedInstanceState == null) {
-            // Adiciona o Fragment VerdadePersonalizado à nova Activity
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_verdade_personalizado, new VerdadePersonalizado())
                     .commit();

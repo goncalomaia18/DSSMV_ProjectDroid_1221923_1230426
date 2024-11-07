@@ -12,7 +12,7 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"/>
 
-    <!-- Título Login -->
+
     <TextView
             android:id="@+id/Title"
             android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
             android:fontFamily="sans-serif-medium"
             android:textStyle="bold"/>
 
-    <!-- Campo de Nome de Usuário -->
+
     <EditText
             android:id="@+id/etUsername"
             android:layout_width="0dp"
@@ -43,7 +43,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"/>
 
-    <!-- Campo de Senha -->
+
     <EditText
             android:id="@+id/etPassword"
             android:layout_width="0dp"
@@ -59,7 +59,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"/>
 
-    <!-- Botão de Login -->
+
     <Button
             android:id="@+id/btnLogin"
             android:layout_width="0dp"
@@ -74,7 +74,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"/>
 
-    <!-- Texto para Redirecionar para Registro -->
+
     <TextView
             android:id="@+id/tvRegister"
             android:layout_width="wrap_content"

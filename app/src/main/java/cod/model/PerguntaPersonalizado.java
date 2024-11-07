@@ -7,7 +7,7 @@ public class PerguntaPersonalizado {
 
     public PerguntaPersonalizado() {}
 
-    // Getter para o ID
+
     public String getId() {
         return _id;
     }
@@ -22,6 +22,6 @@ public class PerguntaPersonalizado {
     }
 
     public String toString() {
-        return perguntaspersonalizado; // Aqui você retorna o texto da pergunta
+        return perguntaspersonalizado;
     }
 }

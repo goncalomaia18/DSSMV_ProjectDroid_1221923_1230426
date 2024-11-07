@@ -41,7 +41,6 @@ public class RemoverVerdades extends Fragment {
 
         fetchPerguntaspersonalizado();
 
-        // Configuração do ListView para responder ao clique
         binding.listViewPerguntas.setOnItemClickListener((parent, view1, position, id) -> {
             PerguntaPersonalizado perguntaSelecionada = perguntasList.get(position);
             removerPergunta(perguntaSelecionada.getId());
@@ -57,7 +56,6 @@ public class RemoverVerdades extends Fragment {
                 if (response.isSuccessful() && response.body() != null) {
                     perguntasList = response.body();
 
-                    // Preencher ListView com as perguntas
                     ArrayAdapter<PerguntaPersonalizado> adapter = new ArrayAdapter<>(getContext(),
                             android.R.layout.simple_list_item_1, perguntasList);
                     binding.listViewPerguntas.setAdapter(adapter);

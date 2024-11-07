@@ -43,17 +43,17 @@ public class Verdade extends Fragment {
         binding.buttonConsequencia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cria o Intent usando o contexto da Activity associada
+
                 Intent intent = new Intent(requireActivity(), ConsequenciaActivity.class);
                 startActivity(intent);
 
-                // Finaliza a Activity anterior, se desejar fechar a MainActivity
+
                 requireActivity().finish();
             }
         });
 
         binding.buttonRespondeu.setOnClickListener(v ->
-                fetchPerguntas() // Chama novamente para carregar uma nova pergunta
+                fetchPerguntas()
         );
     }
 
@@ -68,7 +68,7 @@ public class Verdade extends Fragment {
                     List<Pergunta> perguntas = response.body();
 
                     if (!perguntas.isEmpty()) {
-                        // Seleciona uma pergunta aleatória
+
                         int indexAleatorio = new Random().nextInt(perguntas.size());
                         String perguntaAleatoria = perguntas.get(indexAleatorio).getPergunta();
                         binding.textViewPerguntas.setText(perguntaAleatoria);

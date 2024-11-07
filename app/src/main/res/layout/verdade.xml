@@ -10,7 +10,7 @@
         android:gravity="center"
         android:padding="16dp">
 
-        <!-- Título do Fragment -->
+
         <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
@@ -22,7 +22,6 @@
         android:layout_marginBottom="24dp"
         android:textStyle="bold" />
 
-                <!-- Área para mostrar a pergunta -->
         <TextView
         android:id="@+id/textViewPerguntas"
         android:layout_width="wrap_content"
@@ -35,7 +34,6 @@
         android:elevation="4dp"
         android:gravity="center" />
 
-                <!-- Botão Respondeu -->
         <Button
         android:id="@+id/buttonRespondeu"
         android:layout_width="match_parent"
@@ -47,7 +45,6 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-medium"/>
 
-                <!-- Botão Consequência -->
         <Button
         android:id="@+id/buttonConsequencia"
         android:layout_width="match_parent"

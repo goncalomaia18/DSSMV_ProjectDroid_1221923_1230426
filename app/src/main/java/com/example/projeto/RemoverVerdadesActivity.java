@@ -12,7 +12,7 @@ public class RemoverVerdadesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_remover_verdades);
 
         if (savedInstanceState == null) {
-            // Adiciona o FirstFragment à nova Activity
+
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_remover_verdade_personalizado, new RemoverVerdades())
                     .commit();
