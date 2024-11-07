@@ -18,6 +18,9 @@
         <activity android:name=".VerdadeActivity"/>
         <activity android:name=".ConsequenciaActivity" />
         <activity android:name=".TelaPersonalizadoActivity" />
+        <activity android:name=".VerdadePersonalizadoActivity"/>
+        <activity android:name=".ConsequenciaFragmentPersonalizadoActivity"/>
+        <activity android:name=".RemoverVerdadesActivity"/>
 
 
 

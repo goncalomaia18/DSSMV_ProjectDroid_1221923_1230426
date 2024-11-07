@@ -15,7 +15,7 @@
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Consequência"
+            android:text="Consequência Personalizado"
             android:textSize="24sp"
             android:textColor="#D81B60"
             android:gravity="center"
@@ -24,10 +24,10 @@
 
     <!-- Área para mostrar a pergunta -->
     <TextView
-            android:id="@+id/textViewConsequencias"
+            android:id="@+id/textViewConsequenciasPersonalizado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pergunta aqui"
+            android:text="Consequência aqui"
             android:textSize="18sp"
             android:textColor="#333333"
             android:padding="16dp"
@@ -37,7 +37,7 @@
 
     <!-- Botão Respondeu -->
     <Button
-            android:id="@+id/buttonnovaconsequencia"
+            android:id="@+id/buttonnovaconsequenciaPersonalizado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Consequência"
@@ -49,7 +49,7 @@
 
     <!-- Botão Consequência -->
     <Button
-            android:id="@+id/buttonRespondeuConsequencia"
+            android:id="@+id/buttonRespondeuConsequenciaPersonalizado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Respondeu"
