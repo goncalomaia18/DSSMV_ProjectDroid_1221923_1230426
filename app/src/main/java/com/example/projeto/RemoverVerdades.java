@@ -4,19 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import cod.model.PerguntaPersonalizado;
 import com.example.projeto.databinding.RemoverVerdadeBinding;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,7 +18,7 @@ import retrofit2.Response;
 public class RemoverVerdades extends Fragment {
 
     private RemoverVerdadeBinding binding;
-    private List<PerguntaPersonalizado> perguntasList;
+    private List<PerguntaPersonalizado> ListaPerguntas;
 
     @Override
     public View onCreateView(
@@ -42,7 +36,7 @@ public class RemoverVerdades extends Fragment {
         fetchPerguntaspersonalizado();
 
         binding.listViewPerguntas.setOnItemClickListener((parent, view1, position, id) -> {
-            PerguntaPersonalizado perguntaSelecionada = perguntasList.get(position);
+            PerguntaPersonalizado perguntaSelecionada = ListaPerguntas.get(position);
             removerPergunta(perguntaSelecionada.getId());
         });
     }
@@ -54,10 +48,10 @@ public class RemoverVerdades extends Fragment {
             @Override
             public void onResponse(Call<List<PerguntaPersonalizado>> call, Response<List<PerguntaPersonalizado>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    perguntasList = response.body();
+                    ListaPerguntas = response.body();
 
                     ArrayAdapter<PerguntaPersonalizado> adapter = new ArrayAdapter<>(getContext(),
-                            android.R.layout.simple_list_item_1, perguntasList);
+                            android.R.layout.simple_list_item_1, ListaPerguntas);
                     binding.listViewPerguntas.setAdapter(adapter);
                 } else {
                     Toast.makeText(getContext(), "Erro ao carregar perguntas", Toast.LENGTH_SHORT).show();
@@ -79,7 +73,7 @@ public class RemoverVerdades extends Fragment {
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     Toast.makeText(getContext(), "Verdade removida com sucesso", Toast.LENGTH_SHORT).show();
-                    fetchPerguntaspersonalizado(); // Atualiza a lista após a remoção
+                    fetchPerguntaspersonalizado();
                 } else {
                     Toast.makeText(getContext(), "Erro ao remover a verdade", Toast.LENGTH_SHORT).show();
                 }

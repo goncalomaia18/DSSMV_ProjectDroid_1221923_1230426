@@ -55,6 +55,16 @@ public class TelaPersonalizado extends Fragment {
             }
         });
 
+        binding.buttonRemoverConsequencia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(requireActivity(), RemoverConsequenciasActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         binding.buttonAdicionarPergunta.setOnClickListener(v -> showDialogAdicionarPergunta());
 
 

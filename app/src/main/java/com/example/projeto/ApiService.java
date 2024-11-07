@@ -62,6 +62,13 @@ public interface ApiService {
     @POST("consequenciaspersonalizado")
     Call<Void>adicionarConsequenciaPersonalizado(@Body ClassConsequenciaPersonalizado novaConsequencia);
 
+    @Headers({
+            "Content-Type: application/json",
+            "x-apikey: f9ac62cfdf5b449cd16ee1a1052d328b8e6b5"
+    })
+    @DELETE("consequenciaspersonalizado/{id}")
+    Call<Void> removerconsequencia(@Path("id") String id);
+
 
 
 }

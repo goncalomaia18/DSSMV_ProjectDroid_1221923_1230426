@@ -21,6 +21,7 @@
         <activity android:name=".VerdadePersonalizadoActivity"/>
         <activity android:name=".ConsequenciaFragmentPersonalizadoActivity"/>
         <activity android:name=".RemoverVerdadesActivity"/>
+        <activity android:name=".RemoverConsequenciasActivity"/>
 
 
 

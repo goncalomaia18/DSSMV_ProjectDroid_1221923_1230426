@@ -20,4 +20,8 @@ public class ClassConsequenciaPersonalizado {
     public void setConsequenciaPersonalizado(String consequenciapersonalizado) {
         this.consequenciaspersonalizado = consequenciapersonalizado;
     }
+
+    public String toString() {
+        return consequenciaspersonalizado;
+    }
 }
