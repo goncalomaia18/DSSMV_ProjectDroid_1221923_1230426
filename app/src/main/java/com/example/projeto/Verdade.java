@@ -57,7 +57,7 @@ public class Verdade extends Fragment {
         );
     }
 
-    private void fetchPerguntas() {
+    public void fetchPerguntas() {
         ApiService apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
         Call<List<Pergunta>> call = apiService.getPerguntas();
 
