@@ -41,7 +41,7 @@ public class VerdadeActivity extends AppCompatActivity {
         shake = 0.00f;
     }
 
-    // Listener do sensor para detectar o movimento
+    // deteção do movimento
     private final SensorEventListener sensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
@@ -66,7 +66,7 @@ public class VerdadeActivity extends AppCompatActivity {
         }
     };
 
-    // Metodo que será chamado quando o shake for detectado
+    // Funciona quando o shake é detetado
     private void executarAcaoShake() {
         Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container_verdade);
         if (fragment instanceof Verdade) {
@@ -76,14 +76,12 @@ public class VerdadeActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        // Pausa a detecção do sensor quando a atividade está em segundo plano
         sensorManager.unregisterListener(sensorListener);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        // Registra o listener novamente ao voltar para a atividade
         sensorManager.registerListener(sensorListener,
                 sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
