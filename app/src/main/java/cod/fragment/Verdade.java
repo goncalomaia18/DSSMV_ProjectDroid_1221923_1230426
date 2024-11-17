@@ -1,5 +1,6 @@
-package com.example.projeto;
+package cod.fragment;
 
+import cod.activity.ConsequenciaActivity;
 import cod.model.Pergunta;
 
 import android.content.Intent;
@@ -12,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 
+import cod.restdb.ApiClient;
+import cod.restdb.ApiService;
 import com.example.projeto.databinding.VerdadeBinding;
 
 import retrofit2.Call;

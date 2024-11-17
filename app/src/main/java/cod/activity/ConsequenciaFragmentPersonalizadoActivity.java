@@ -1,7 +1,9 @@
-package com.example.projeto;
+package cod.activity;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import cod.fragment.ConsequenciaFragmentPersonalizado;
+import com.example.projeto.R;
 
 public class ConsequenciaFragmentPersonalizadoActivity extends AppCompatActivity {
 

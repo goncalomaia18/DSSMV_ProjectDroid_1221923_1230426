@@ -1,6 +1,7 @@
-package com.example.projeto;
+package cod.fragment;
 
 import android.content.Intent;
+import cod.activity.VerdadePersonalizadoActivity;
 import cod.model.ClassConsequenciaPersonalizado;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +10,8 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import cod.restdb.ApiClient;
+import cod.restdb.ApiService;
 import com.example.projeto.databinding.ConsequenciaPersonalizadoBinding;
 import retrofit2.Call;
 import retrofit2.Callback;

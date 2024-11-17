@@ -1,8 +1,10 @@
-package com.example.projeto;
+package cod.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.projeto.R;
+import cod.fragment.RemoverConsequencias;
 
 public class RemoverConsequenciasActivity extends AppCompatActivity {
 
