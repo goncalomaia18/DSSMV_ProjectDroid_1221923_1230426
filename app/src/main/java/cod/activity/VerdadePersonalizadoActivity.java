@@ -3,8 +3,8 @@ package cod.activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.projeto.R;
 import cod.fragment.VerdadePersonalizado;
+import com.example.projeto.R;
 
 public class VerdadePersonalizadoActivity extends AppCompatActivity {
 
