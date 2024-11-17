@@ -1,4 +1,4 @@
-package com.example.projeto;
+package cod.activity;
 
 import android.os.Bundle;
 
@@ -11,6 +11,8 @@ import android.hardware.SensorManager;
 import androidx.fragment.app.Fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.projeto.R;
+import cod.fragment.Verdade;
 
 public class VerdadeActivity extends AppCompatActivity {
 

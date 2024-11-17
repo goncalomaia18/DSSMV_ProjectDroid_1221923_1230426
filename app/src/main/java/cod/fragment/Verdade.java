@@ -1,5 +1,8 @@
-package com.example.projeto;
+package cod.fragment;
 
+import cod.activity.ConsequenciaActivity;
+import cod.api.ApiClient;
+import cod.api.ApiService;
 import cod.model.Pergunta;
 
 import android.content.Intent;

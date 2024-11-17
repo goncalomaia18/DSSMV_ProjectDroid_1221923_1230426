@@ -1,4 +1,4 @@
-package com.example.projeto;
+package cod.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import cod.api.ApiClient;
+import cod.api.ApiService;
 import cod.model.PerguntaPersonalizado;
 import com.example.projeto.databinding.RemoverVerdadeBinding;
 import java.util.List;

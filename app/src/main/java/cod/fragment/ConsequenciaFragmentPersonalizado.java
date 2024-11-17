@@ -1,6 +1,9 @@
-package com.example.projeto;
+package cod.fragment;
 
 import android.content.Intent;
+import cod.activity.VerdadePersonalizadoActivity;
+import cod.api.ApiClient;
+import cod.api.ApiService;
 import cod.model.ClassConsequenciaPersonalizado;
 import android.os.Bundle;
 import android.view.LayoutInflater;

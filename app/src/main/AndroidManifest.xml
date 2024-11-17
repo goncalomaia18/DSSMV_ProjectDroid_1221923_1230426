@@ -15,18 +15,18 @@
             android:theme="@style/Theme.Projeto"
             tools:targetApi="31">
 
-        <activity android:name=".VerdadeActivity"/>
-        <activity android:name=".ConsequenciaActivity" />
-        <activity android:name=".TelaPersonalizadoActivity" />
-        <activity android:name=".VerdadePersonalizadoActivity"/>
-        <activity android:name=".ConsequenciaFragmentPersonalizadoActivity"/>
-        <activity android:name=".RemoverVerdadesActivity"/>
-        <activity android:name=".RemoverConsequenciasActivity"/>
+        <activity android:name="cod.activity.VerdadeActivity"/>
+        <activity android:name="cod.activity.ConsequenciaActivity" />
+        <activity android:name="cod.activity.TelaPersonalizadoActivity" />
+        <activity android:name="cod.activity.VerdadePersonalizadoActivity"/>
+        <activity android:name="cod.activity.ConsequenciaFragmentPersonalizadoActivity"/>
+        <activity android:name="cod.activity.RemoverVerdadesActivity"/>
+        <activity android:name="cod.activity.RemoverConsequenciasActivity"/>
 
 
 
         <activity
-                android:name=".MainActivity"
+                android:name="cod.activity.MainActivity"
                 android:exported="true"
                 android:theme="@style/Theme.Projeto">
             <intent-filter>
