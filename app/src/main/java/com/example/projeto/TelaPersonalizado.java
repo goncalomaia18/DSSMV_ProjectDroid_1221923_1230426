@@ -1,4 +1,4 @@
-package cod.fragment;
+package com.example.projeto;
 
 import android.app.AlertDialog;
 
@@ -14,11 +14,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import cod.activity.RemoverConsequenciasActivity;
-import cod.activity.RemoverVerdadesActivity;
-import cod.activity.VerdadePersonalizadoActivity;
-import cod.restdb.ApiClient;
-import cod.restdb.ApiService;
 import com.example.projeto.databinding.TelaPersonalizadoBinding;
 
 import cod.model.PerguntaPersonalizado;

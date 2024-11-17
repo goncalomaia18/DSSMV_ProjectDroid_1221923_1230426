@@ -1,23 +1,22 @@
-package cod.activity;
+package com.example.projeto;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.projeto.R;
-import cod.fragment.VerdadePersonalizado;
 
-public class VerdadePersonalizadoActivity extends AppCompatActivity {
+public class RemoverVerdadesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_verdade_personalizado);
+        setContentView(R.layout.activity_remover_verdades);
 
         if (savedInstanceState == null) {
 
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_verdade_personalizado, new VerdadePersonalizado())
+                    .replace(R.id.fragment_container_remover_verdade_personalizado, new RemoverVerdades())
                     .commit();
         }
     }
 }
+

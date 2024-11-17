@@ -1,12 +1,11 @@
 
-package cod.activity;
+package com.example.projeto;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.projeto.R;
 
 public class MainActivity extends AppCompatActivity {
 

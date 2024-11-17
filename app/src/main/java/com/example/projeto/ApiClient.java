@@ -1,4 +1,4 @@
-package cod.restdb;
+package com.example.projeto;
 
 
 import retrofit2.Retrofit;

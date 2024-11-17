@@ -1,4 +1,4 @@
-package cod.restdb;
+package com.example.projeto;
 import cod.model.ClassConsequencia;
 import cod.model.ClassConsequenciaPersonalizado;
 import cod.model.Pergunta;
