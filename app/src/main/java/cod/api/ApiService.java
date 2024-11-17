@@ -1,4 +1,4 @@
-package com.example.projeto;
+package cod.api;
 import cod.model.ClassConsequencia;
 import cod.model.ClassConsequenciaPersonalizado;
 import cod.model.Pergunta;

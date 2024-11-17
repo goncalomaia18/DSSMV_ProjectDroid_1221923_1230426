@@ -1,6 +1,4 @@
-package com.example.projeto;
-
-import cod.model.Pergunta;
+package cod.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,30 +14,36 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.projeto.databinding.VerdadeBinding;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import cod.api.ApiClient;
+import cod.api.ApiService;
+import cod.activity.ConsequenciaFragmentPersonalizadoActivity;
+import com.example.projeto.databinding.VerdadePersonalizadoBinding;
 
 import java.util.List;
 import java.util.Random;
 
-public class Verdade extends Fragment implements SensorEventListener {
+import cod.model.PerguntaPersonalizado;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    private VerdadeBinding binding;
+public class VerdadePersonalizado extends Fragment implements SensorEventListener {
+
+    private VerdadePersonalizadoBinding binding;
+
+    // Variáveis para o Sensor
     private SensorManager sensorManager;
     private Sensor accelerometer;
-    private float acelVal;  // valor atual da aceleração
-    private float acelLast; // última aceleração registrada
-    private float shake;    // aceleração com base na diferença das leituras
+    private float acelVal;  // Valor atual da aceleração
+    private float acelLast; // Última aceleração registrada
+    private float shake;    // Aceleração acumulada
 
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        binding = VerdadeBinding.inflate(inflater, container, false);
+        binding = VerdadePersonalizadoBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -49,53 +53,55 @@ public class Verdade extends Fragment implements SensorEventListener {
 
         // Configura o SensorManager para detecção de shake
         sensorManager = (SensorManager) requireActivity().getSystemService(Context.SENSOR_SERVICE);
+
         if (sensorManager != null) {
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
         }
 
-        // Inicializar valores de aceleração
+        // Inicializar os valores de aceleração
         acelVal = SensorManager.GRAVITY_EARTH;
         acelLast = SensorManager.GRAVITY_EARTH;
         shake = 0.00f;
 
-        fetchPerguntas();
+        // Busca as perguntas personalizadas
+        fetchPerguntasPersonalizado();
 
         // Configura os botões
-        binding.buttonConsequencia.setOnClickListener(v -> {
-            Intent intent = new Intent(requireActivity(), ConsequenciaActivity.class);
+        binding.buttonConsequenciaPersonalizado.setOnClickListener(v -> {
+            Intent intent = new Intent(requireActivity(), ConsequenciaFragmentPersonalizadoActivity.class);
             startActivity(intent);
             requireActivity().finish();
         });
 
-        binding.buttonRespondeu.setOnClickListener(v -> fetchPerguntas());
+        binding.buttonRespondeuPersonalizado.setOnClickListener(v -> fetchPerguntasPersonalizado());
     }
 
-    public void fetchPerguntas() {
+    private void fetchPerguntasPersonalizado() {
         ApiService apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
-        Call<List<Pergunta>> call = apiService.getPerguntas();
+        Call<List<PerguntaPersonalizado>> call = apiService.getPerguntaPersonalizado();
 
-        call.enqueue(new Callback<List<Pergunta>>() {
+        call.enqueue(new Callback<List<PerguntaPersonalizado>>() {
             @Override
-            public void onResponse(Call<List<Pergunta>> call, Response<List<Pergunta>> response) {
+            public void onResponse(Call<List<PerguntaPersonalizado>> call, Response<List<PerguntaPersonalizado>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    List<Pergunta> perguntas = response.body();
+                    List<PerguntaPersonalizado> perguntaspersonalizado = response.body();
 
-                    if (!perguntas.isEmpty()) {
-                        int indexAleatorio = new Random().nextInt(perguntas.size());
-                        String perguntaAleatoria = perguntas.get(indexAleatorio).getPergunta();
-                        binding.textViewPerguntas.setText(perguntaAleatoria);
+                    if (!perguntaspersonalizado.isEmpty()) {
+                        int indexAleatorio = new Random().nextInt(perguntaspersonalizado.size());
+                        String perguntaAleatoria = perguntaspersonalizado.get(indexAleatorio).getPerguntaPersonalizado();
+                        binding.textViewPerguntasPersonalizado.setText(perguntaAleatoria);
                     } else {
-                        binding.textViewPerguntas.setText("Nenhuma pergunta disponível.");
+                        binding.textViewPerguntasPersonalizado.setText("Nenhuma pergunta disponível.");
                     }
                 } else {
-                    binding.textViewPerguntas.setText("Erro ao obter perguntas: " + response.message());
+                    binding.textViewPerguntasPersonalizado.setText("Erro ao obter perguntas: " + response.message());
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Pergunta>> call, Throwable t) {
-                binding.textViewPerguntas.setText("Falha na requisição: " + t.getMessage());
+            public void onFailure(Call<List<PerguntaPersonalizado>> call, Throwable t) {
+                binding.textViewPerguntasPersonalizado.setText("Falha na requisição: " + t.getMessage());
             }
         });
     }
@@ -110,17 +116,16 @@ public class Verdade extends Fragment implements SensorEventListener {
         acelLast = acelVal;
         acelVal = (float) Math.sqrt((x * x) + (y * y) + (z * z));
         float delta = acelVal - acelLast;
-        shake = shake * 0.9f + delta; // Usar fator de suavização para shake
+        shake = shake * 0.9f + delta; // Suavização da aceleração
 
-        if (shake > 12) { // Limite ajustável para detectar shake
-            // Ação a ser executada quando o shake é detectado
-            fetchPerguntas(); // Atualiza a pergunta ao detectar o shake
+        if (shake > 12) { // Limite ajustável para detecção de shake
+            fetchPerguntasPersonalizado(); // Atualiza a pergunta personalizada
         }
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // Não é necessário implementar para este caso
+        // Não é necessário implementar para esta funcionalidade
     }
 
     @Override
@@ -135,7 +140,7 @@ public class Verdade extends Fragment implements SensorEventListener {
     @Override
     public void onPause() {
         super.onPause();
-        // Parar o listener para evitar o uso desnecessário de bateria
+        // Cancelar o listener do sensor para economizar bateria
         if (sensorManager != null) {
             sensorManager.unregisterListener(this);
         }
